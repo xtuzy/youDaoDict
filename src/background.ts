@@ -3,6 +3,7 @@ import Dict from './model/Dict';
 import api from './model/API';
 import tab from './model/Tab';
 import parser from './model/Parser';
+import sentence from './model/Sentence';
 import MsgType from './common/msg-type';
 import {
   OPTION_STORAGE_ITEM,
@@ -159,4 +160,23 @@ chrome.runtime.onInstalled.addListener((details) => {
   if (openOptionPage ) {
     chrome.tabs.create({ url: 'option.html' });
   }
+});
+
+const menuHandler = (onClickData, tab)=>{
+  const {selectionText} = onClickData;
+  sentence.add({
+    sentence: selectionText,
+    url: tab.url,
+  })
+  .then(()=>{
+    popBadgeTips('OK', 'green');
+  });
+};
+
+// Menu
+chrome.contextMenus.create({
+  title: '摘句',
+  contexts: ['selection'],
+  documentUrlPatterns: ['<all_urls>'],
+  onclick: menuHandler,
 });

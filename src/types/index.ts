@@ -20,3 +20,8 @@ export interface ITranslator {
   query: ()=>any;
   parse: (resp) => IWord;
 }
+
+export interface ISentence{
+  sentence: string;
+  url: string;
+}
