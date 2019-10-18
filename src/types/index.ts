@@ -24,4 +24,5 @@ export interface ITranslator {
 export interface ISentence{
   sentence: string;
   url: string;
+  title: string;
 }

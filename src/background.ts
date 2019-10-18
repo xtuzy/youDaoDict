@@ -167,6 +167,7 @@ const menuHandler = (onClickData, tab)=>{
   sentence.add({
     sentence: selectionText,
     url: tab.url,
+    title: tab.title,
   })
   .then(()=>{
     popBadgeTips('OK', 'green');
