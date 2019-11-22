@@ -22,12 +22,12 @@ rt {
   margin: 0 auto;
 }
 
-.top{
+.top {
   display: flex;
   margin: 10px 0;
 }
 
-.title{
+.title {
   flex: 1;
   font-weight: bold;
   font-size: 18px;
@@ -50,9 +50,20 @@ rt {
   }
 }
 
+.history{
+  background: #ffffffb0;
+  .phonetic:hover {
+    color: #35a1d4;
+    cursor: pointer;
+  }
+  .no-data{
+    text-align: center;
+    padding-bottom: 15px;
+  }
+}
+
 table {
   table-layout: fixed;
-  background: #ffffffb0;
   border-collapse: collapse;
   border-spacing: 0;
 
@@ -92,7 +103,8 @@ table {
       background-position-y: -20px;
     }
   }
-  .check{
+
+  .check {
     color: #35a1d4;
     cursor: pointer;
   }
@@ -108,7 +120,7 @@ table {
     cursor: pointer;
   }
 
-  .translation{
+  .translation {
     max-width: 800px; // 防止翻译内容过长
   }
 }

@@ -26,3 +26,10 @@ export interface ISentence{
   url: string;
   title: string;
 }
+
+export interface SpeachInfo {
+  /** 朗读单词 */
+  word: string;
+  /** 朗读类型 */
+  type?: string;
+}
