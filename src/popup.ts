@@ -108,11 +108,16 @@ const restoreOptions = (option) => {
 const saveOptions = () => {
   Object.keys(Options).forEach((key) => {
     const elem = $(`#${key}`);
-    if (Options[key][0] === 'checked') {
-      Options[key][1] = elem.checked;
+    if( elem ) {
+      if (Options[key][0] === 'checked') {
+        Options[key][1] = elem.checked;
+      }
+      else {
+        Options[key] = elem.value;
+      }
     }
     else {
-      Options[key] = elem.value;
+      console.warn(`未见节点: #${key}`);
     }
   });
   // https://developer.chrome.com/extensions/storage
